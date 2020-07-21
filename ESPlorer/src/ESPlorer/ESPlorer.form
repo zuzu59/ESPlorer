@@ -637,9 +637,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;u&gt;S&lt;/u&gt;ave to ESP"/>
               </Properties>
-              <BindingProperties>
-                <BindingProperty name="enabled" source="FileSaveESP" sourcePath="${enabled}" target="MenuItemFileSaveESP" targetPath="enabled" updateStrategy="0" immediately="false"/>
-              </BindingProperties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemFileSaveESPActionPerformed"/>
               </Events>
@@ -819,9 +816,6 @@
                 <Property name="text" type="java.lang.String" value="&lt;html&gt;Send selected &lt;u&gt;B&lt;/u&gt;lock to ESP"/>
                 <Property name="toolTipText" type="java.lang.String" value="Send selected block to ESP"/>
               </Properties>
-              <BindingProperties>
-                <BindingProperty name="enabled" source="MenuItemEditorSendSelected" sourcePath="${enabled}" target="MenuItemEditSendSelected" targetPath="enabled" updateStrategy="0" immediately="false"/>
-              </BindingProperties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemEditSendSelectedActionPerformed"/>
               </Events>
@@ -1612,9 +1606,6 @@
                                     </Property>
                                     <Property name="verticalTextPosition" type="int" value="3"/>
                                   </Properties>
-                                  <BindingProperties>
-                                    <BindingProperty name="enabled" source="MenuItemFileNew" sourcePath="${enabled}" target="ButtonFileNew" targetPath="enabled" updateStrategy="0" immediately="false"/>
-                                  </BindingProperties>
                                   <Events>
                                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonFileNewActionPerformed"/>
                                   </Events>
@@ -1671,9 +1662,6 @@
                                     </Property>
                                     <Property name="verticalTextPosition" type="int" value="3"/>
                                   </Properties>
-                                  <BindingProperties>
-                                    <BindingProperty name="enabled" source="MenuItemFileReload" sourcePath="${enabled}" target="ButtonFileReload" targetPath="enabled" updateStrategy="0" immediately="false"/>
-                                  </BindingProperties>
                                   <Events>
                                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonFileReloadActionPerformed"/>
                                   </Events>
@@ -1763,9 +1751,6 @@
                                     </Property>
                                     <Property name="verticalTextPosition" type="int" value="3"/>
                                   </Properties>
-                                  <BindingProperties>
-                                    <BindingProperty name="enabled" source="MenuItemFileClose" sourcePath="${enabled}" target="ButtonFileClose" targetPath="enabled" updateStrategy="0" immediately="false"/>
-                                  </BindingProperties>
                                   <Events>
                                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonFileCloseActionPerformed"/>
                                   </Events>
@@ -1952,9 +1937,6 @@
                                     </Property>
                                     <Property name="verticalTextPosition" type="int" value="3"/>
                                   </Properties>
-                                  <BindingProperties>
-                                    <BindingProperty name="enabled" source="MenuItemEditorSendSelected" sourcePath="${enabled}" target="ButtonSendSelected" targetPath="enabled" updateStrategy="0" immediately="false"/>
-                                  </BindingProperties>
                                   <Events>
                                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonSendSelectedActionPerformed"/>
                                   </Events>
@@ -4060,9 +4042,6 @@
                                     <Property name="text" type="java.lang.String" value="Line delay for &quot;Dumb Mode&quot; = 200 ms"/>
                                     <Property name="toolTipText" type="java.lang.String" value="It&apos;s usual &quot;line delay&quot;, as you known."/>
                                   </Properties>
-                                  <BindingProperties>
-                                    <BindingProperty name="enabled" source="DumbMode" sourcePath="${selected}" target="LineDelayLabel" targetPath="enabled" updateStrategy="0" immediately="false"/>
-                                  </BindingProperties>
                                 </Component>
                                 <Component class="javax.swing.JSlider" name="LineDelay">
                                   <Properties>
@@ -4079,9 +4058,6 @@
                                     <Property name="value" type="int" value="200"/>
                                     <Property name="alignmentY" type="float" value="1.0"/>
                                   </Properties>
-                                  <BindingProperties>
-                                    <BindingProperty name="enabled" source="DumbMode" sourcePath="${selected}" target="LineDelay" targetPath="enabled" updateStrategy="0" immediately="false"/>
-                                  </BindingProperties>
                                   <Events>
                                     <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="LineDelayStateChanged"/>
                                   </Events>
@@ -4436,9 +4412,6 @@
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
-                      <BindingProperties>
-                        <BindingProperty name="border" source="AT_Station" sourcePath="${border}" target="TabAT" targetPath="border" updateStrategy="0" immediately="false"/>
-                      </BindingProperties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="0" y="70" width="440" height="645"/>
@@ -6342,9 +6315,6 @@
                               <Dimension value="[210, 23]"/>
                             </Property>
                           </Properties>
-                          <BindingProperties>
-                            <BindingProperty name="font" source="cmdGetHelpCWMODE" sourcePath="${font}" target="cmdGetHelpCWMODE" targetPath="font" updateStrategy="0" immediately="false"/>
-                          </BindingProperties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdGetHelpCWMODEActionPerformed"/>
                           </Events>
@@ -6366,9 +6336,6 @@
                               <Dimension value="[210, 23]"/>
                             </Property>
                           </Properties>
-                          <BindingProperties>
-                            <BindingProperty name="font" source="cmdGetHelpCWMODE" sourcePath="${font}" target="cmdSetCWMODE1" targetPath="font" updateStrategy="0" immediately="false"/>
-                          </BindingProperties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdSetCWMODE1ActionPerformed"/>
                           </Events>
@@ -6390,9 +6357,6 @@
                               <Dimension value="[210, 23]"/>
                             </Property>
                           </Properties>
-                          <BindingProperties>
-                            <BindingProperty name="font" source="cmdGetHelpCWMODE" sourcePath="${font}" target="cmdGetCWMODE" targetPath="font" updateStrategy="0" immediately="false"/>
-                          </BindingProperties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdGetCWMODEActionPerformed"/>
                           </Events>
@@ -6414,9 +6378,6 @@
                               <Dimension value="[210, 23]"/>
                             </Property>
                           </Properties>
-                          <BindingProperties>
-                            <BindingProperty name="font" source="cmdGetHelpCWMODE" sourcePath="${font}" target="cmdSetCWMODE2" targetPath="font" updateStrategy="0" immediately="false"/>
-                          </BindingProperties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdSetCWMODE2ActionPerformed"/>
                           </Events>
@@ -6441,9 +6402,6 @@
                               <Dimension value="[210, 23]"/>
                             </Property>
                           </Properties>
-                          <BindingProperties>
-                            <BindingProperty name="font" source="cmdGetHelpCWMODE" sourcePath="${font}" target="cmdSetCWLAP" targetPath="font" updateStrategy="0" immediately="false"/>
-                          </BindingProperties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdSetCWLAPActionPerformed"/>
                           </Events>
@@ -6465,9 +6423,6 @@
                               <Dimension value="[210, 23]"/>
                             </Property>
                           </Properties>
-                          <BindingProperties>
-                            <BindingProperty name="font" source="cmdGetHelpCWMODE" sourcePath="${font}" target="cmdSetCWMODE3" targetPath="font" updateStrategy="0" immediately="false"/>
-                          </BindingProperties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdSetCWMODE3ActionPerformed"/>
                           </Events>
@@ -8548,6 +8503,7 @@
                           <Border info="null"/>
                         </Property>
                         <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
+                        <Property name="verticalScrollBarPolicy" type="int" value="22"/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">

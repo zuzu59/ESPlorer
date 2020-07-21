@@ -1,6 +1,9 @@
 ESPlorer.Log
 build/
 test/
-dist/
+zzzdist/
 ESPlorer/build/built-jar.properties
 ESPlorer/nbproject/genfiles.properties
+ESPlorer/nbproject/build-impl.xml~
+.DS_Store
+

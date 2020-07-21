@@ -47,7 +47,7 @@ public class ESPlorer extends javax.swing.JFrame {
     public static boolean pOpen = false;
     public static boolean sOpen = false;
     public static boolean portJustOpen = false;
-    public static final String VERSION = "v0.2.0-rc5";
+    public static final String VERSION = "v0.2.0-rc5 zf200721.2310";
     private static String laf;
     private static String systemLaf;
     public static Preferences prefs;
@@ -85,7 +85,6 @@ public class ESPlorer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
-        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         ContextMenuTerminal = new javax.swing.JPopupMenu();
         MenuItemTerminalClear = new javax.swing.JMenuItem();
@@ -592,16 +591,16 @@ public class ESPlorer extends javax.swing.JFrame {
         MenuItemHelpAbout = new javax.swing.JMenuItem();
 
         ContextMenuTerminal.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
-            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
-                ContextMenuTerminalPopupMenuWillBecomeVisible(evt);
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
             }
             public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
             }
-            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+                ContextMenuTerminalPopupMenuWillBecomeVisible(evt);
             }
         });
 
-        MenuItemTerminalClear.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemTerminalClear.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemTerminalClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/terminal_clear.png"))); // NOI18N
         MenuItemTerminalClear.setText("Clear");
         MenuItemTerminalClear.setToolTipText("");
@@ -612,7 +611,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         ContextMenuTerminal.add(MenuItemTerminalClear);
 
-        MenuItemTerminalCopy.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemTerminalCopy.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemTerminalCopy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/copy.png"))); // NOI18N
         MenuItemTerminalCopy.setText("Copy");
         MenuItemTerminalCopy.setToolTipText("Copy selected text to system clipboard");
@@ -625,7 +624,7 @@ public class ESPlorer extends javax.swing.JFrame {
         ContextMenuTerminal.add(MenuItemTerminalCopy);
         ContextMenuTerminal.add(TerminalSeparator1);
 
-        MenuItemTerminalFontInc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ADD, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemTerminalFontInc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ADD, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemTerminalFontInc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/zoom in.png"))); // NOI18N
         MenuItemTerminalFontInc.setText("Inc font size");
         MenuItemTerminalFontInc.addActionListener(new java.awt.event.ActionListener() {
@@ -635,7 +634,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         ContextMenuTerminal.add(MenuItemTerminalFontInc);
 
-        MenuItemTerminalFontDec.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SUBTRACT, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemTerminalFontDec.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SUBTRACT, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemTerminalFontDec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/zoom out.png"))); // NOI18N
         MenuItemTerminalFontDec.setText("Dec font size");
         MenuItemTerminalFontDec.addActionListener(new java.awt.event.ActionListener() {
@@ -668,7 +667,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         ContextMenuTerminal.add(MenuItemTerminalFormat);
 
-        MenuItemEditorUndo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemEditorUndo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemEditorUndo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/undo1.png"))); // NOI18N
         MenuItemEditorUndo.setText("Undo");
         MenuItemEditorUndo.setToolTipText("");
@@ -693,7 +692,7 @@ public class ESPlorer extends javax.swing.JFrame {
         ContextMenuEditor.add(MenuItemEditorRedo);
         ContextMenuEditor.add(EditorSeparator1);
 
-        MenuItemEditorSendSelected.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_MASK));
+        MenuItemEditorSendSelected.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_DOWN_MASK));
         MenuItemEditorSendSelected.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/send_selected.png"))); // NOI18N
         MenuItemEditorSendSelected.setText("Send selected to ESP");
         MenuItemEditorSendSelected.setToolTipText("Send selected fragment to ESP");
@@ -704,7 +703,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         ContextMenuEditor.add(MenuItemEditorSendSelected);
 
-        MenuItemEditorSendLine.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_MASK));
+        MenuItemEditorSendLine.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_DOWN_MASK));
         MenuItemEditorSendLine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/run_line.png"))); // NOI18N
         MenuItemEditorSendLine.setText("Send current line to ESP");
         MenuItemEditorSendLine.setToolTipText("Send current line to ESP");
@@ -716,7 +715,7 @@ public class ESPlorer extends javax.swing.JFrame {
         ContextMenuEditor.add(MenuItemEditorSendLine);
         ContextMenuEditor.add(EditorSeparator);
 
-        MenuItemEditorCut.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemEditorCut.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemEditorCut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/cut.png"))); // NOI18N
         MenuItemEditorCut.setText("Cut");
         MenuItemEditorCut.setEnabled(false);
@@ -727,7 +726,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         ContextMenuEditor.add(MenuItemEditorCut);
 
-        MenuItemEditorCopy.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemEditorCopy.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemEditorCopy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/copy.png"))); // NOI18N
         MenuItemEditorCopy.setText("Copy");
         MenuItemEditorCopy.setEnabled(false);
@@ -738,7 +737,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         ContextMenuEditor.add(MenuItemEditorCopy);
 
-        MenuItemEditorPaste.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemEditorPaste.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemEditorPaste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/paste.png"))); // NOI18N
         MenuItemEditorPaste.setText("Paste");
         MenuItemEditorPaste.setEnabled(false);
@@ -750,7 +749,7 @@ public class ESPlorer extends javax.swing.JFrame {
         ContextMenuEditor.add(MenuItemEditorPaste);
         ContextMenuEditor.add(EditorSeparator2);
 
-        MenuItemEditorFontInc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ADD, java.awt.event.InputEvent.ALT_MASK));
+        MenuItemEditorFontInc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ADD, java.awt.event.InputEvent.ALT_DOWN_MASK));
         MenuItemEditorFontInc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/zoom in.png"))); // NOI18N
         MenuItemEditorFontInc.setText("Inc font size");
         MenuItemEditorFontInc.addActionListener(new java.awt.event.ActionListener() {
@@ -760,7 +759,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         ContextMenuEditor.add(MenuItemEditorFontInc);
 
-        MenuItemEditorFontDec.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SUBTRACT, java.awt.event.InputEvent.ALT_MASK));
+        MenuItemEditorFontDec.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SUBTRACT, java.awt.event.InputEvent.ALT_DOWN_MASK));
         MenuItemEditorFontDec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/zoom out.png"))); // NOI18N
         MenuItemEditorFontDec.setText("Dec font size");
         MenuItemEditorFontDec.addActionListener(new java.awt.event.ActionListener() {
@@ -770,7 +769,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         ContextMenuEditor.add(MenuItemEditorFontDec);
 
-        MenuItemLogClear.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemLogClear.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemLogClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/backup_delete.png"))); // NOI18N
         MenuItemLogClear.setText("Clear log");
         MenuItemLogClear.setToolTipText("");
@@ -781,7 +780,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         ContextMenuLog.add(MenuItemLogClear);
 
-        MenuItemLogClose.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemLogClose.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemLogClose.setText("Hide Log");
         MenuItemLogClose.setToolTipText("");
         MenuItemLogClose.addActionListener(new java.awt.event.ActionListener() {
@@ -792,7 +791,7 @@ public class ESPlorer extends javax.swing.JFrame {
         ContextMenuLog.add(MenuItemLogClose);
         ContextMenuLog.add(LogSeparator);
 
-        MenuItemLogFontInc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ADD, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemLogFontInc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ADD, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemLogFontInc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/zoom in.png"))); // NOI18N
         MenuItemLogFontInc.setText("Inc font size");
         MenuItemLogFontInc.addActionListener(new java.awt.event.ActionListener() {
@@ -802,7 +801,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         ContextMenuLog.add(MenuItemLogFontInc);
 
-        MenuItemLogFontDec.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SUBTRACT, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemLogFontDec.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SUBTRACT, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemLogFontDec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/zoom out.png"))); // NOI18N
         MenuItemLogFontDec.setText("Dec font size");
         MenuItemLogFontDec.addActionListener(new java.awt.event.ActionListener() {
@@ -904,12 +903,12 @@ public class ESPlorer extends javax.swing.JFrame {
         );
 
         ContextMenuESPFileLUA.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
-            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
-                ContextMenuESPFileLUAPopupMenuWillBecomeVisible(evt);
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
             }
             public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
             }
-            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+                ContextMenuESPFileLUAPopupMenuWillBecomeVisible(evt);
             }
         });
 
@@ -1051,10 +1050,6 @@ public class ESPlorer extends javax.swing.JFrame {
         ButtonFileNew.setMinimumSize(new java.awt.Dimension(40, 40));
         ButtonFileNew.setPreferredSize(new java.awt.Dimension(40, 40));
         ButtonFileNew.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, MenuItemFileNew, org.jdesktop.beansbinding.ELProperty.create("${enabled}"), ButtonFileNew, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
         ButtonFileNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonFileNewActionPerformed(evt);
@@ -1089,10 +1084,6 @@ public class ESPlorer extends javax.swing.JFrame {
         ButtonFileReload.setMinimumSize(new java.awt.Dimension(40, 40));
         ButtonFileReload.setPreferredSize(new java.awt.Dimension(40, 40));
         ButtonFileReload.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, MenuItemFileReload, org.jdesktop.beansbinding.ELProperty.create("${enabled}"), ButtonFileReload, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
         ButtonFileReload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonFileReloadActionPerformed(evt);
@@ -1148,10 +1139,6 @@ public class ESPlorer extends javax.swing.JFrame {
         ButtonFileClose.setMinimumSize(new java.awt.Dimension(40, 40));
         ButtonFileClose.setPreferredSize(new java.awt.Dimension(40, 40));
         ButtonFileClose.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, MenuItemFileClose, org.jdesktop.beansbinding.ELProperty.create("${enabled}"), ButtonFileClose, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
         ButtonFileClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonFileCloseActionPerformed(evt);
@@ -1267,10 +1254,6 @@ public class ESPlorer extends javax.swing.JFrame {
         ButtonSendSelected.setMinimumSize(new java.awt.Dimension(40, 40));
         ButtonSendSelected.setPreferredSize(new java.awt.Dimension(40, 40));
         ButtonSendSelected.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, MenuItemEditorSendSelected, org.jdesktop.beansbinding.ELProperty.create("${enabled}"), ButtonSendSelected, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
         ButtonSendSelected.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonSendSelectedActionPerformed(evt);
@@ -1341,11 +1324,11 @@ public class ESPlorer extends javax.swing.JFrame {
             }
         });
         TextEditor.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
-                TextEditorInputMethodTextChanged(evt);
-            }
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
                 TextEditorCaretPositionChanged(evt);
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                TextEditorInputMethodTextChanged(evt);
             }
         });
         TextEditor.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -2715,9 +2698,6 @@ public class ESPlorer extends javax.swing.JFrame {
         LineDelayLabel.setText("Line delay for \"Dumb Mode\" = 200 ms");
         LineDelayLabel.setToolTipText("It's usual \"line delay\", as you known.");
 
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, DumbMode, org.jdesktop.beansbinding.ELProperty.create("${selected}"), LineDelayLabel, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
         LineDelay.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         LineDelay.setMajorTickSpacing(500);
         LineDelay.setMaximum(1000);
@@ -2728,10 +2708,6 @@ public class ESPlorer extends javax.swing.JFrame {
         LineDelay.setToolTipText("Fixed delay between lines");
         LineDelay.setValue(200);
         LineDelay.setAlignmentY(1.0F);
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, DumbMode, org.jdesktop.beansbinding.ELProperty.create("${selected}"), LineDelay, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
         LineDelay.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 LineDelayStateChanged(evt);
@@ -3093,9 +3069,6 @@ public class ESPlorer extends javax.swing.JFrame {
         TabAT.setAlignmentY(0.0F);
         TabAT.setFocusable(false);
         TabAT.setOpaque(true);
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, AT_Station, org.jdesktop.beansbinding.ELProperty.create("${border}"), TabAT, org.jdesktop.beansbinding.BeanProperty.create("border"));
-        bindingGroup.addBinding(binding);
 
         AT_Station.setToolTipText("WiFi commands");
         AT_Station.setAlignmentX(0.0F);
@@ -4258,10 +4231,6 @@ public class ESPlorer extends javax.swing.JFrame {
         cmdGetHelpCWMODE.setMaximumSize(new java.awt.Dimension(210, 23));
         cmdGetHelpCWMODE.setMinimumSize(new java.awt.Dimension(210, 23));
         cmdGetHelpCWMODE.setPreferredSize(new java.awt.Dimension(210, 23));
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, cmdGetHelpCWMODE, org.jdesktop.beansbinding.ELProperty.create("${font}"), cmdGetHelpCWMODE, org.jdesktop.beansbinding.BeanProperty.create("font"));
-        bindingGroup.addBinding(binding);
-
         cmdGetHelpCWMODE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdGetHelpCWMODEActionPerformed(evt);
@@ -4275,10 +4244,6 @@ public class ESPlorer extends javax.swing.JFrame {
         cmdSetCWMODE1.setMaximumSize(new java.awt.Dimension(210, 23));
         cmdSetCWMODE1.setMinimumSize(new java.awt.Dimension(210, 23));
         cmdSetCWMODE1.setPreferredSize(new java.awt.Dimension(210, 23));
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, cmdGetHelpCWMODE, org.jdesktop.beansbinding.ELProperty.create("${font}"), cmdSetCWMODE1, org.jdesktop.beansbinding.BeanProperty.create("font"));
-        bindingGroup.addBinding(binding);
-
         cmdSetCWMODE1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdSetCWMODE1ActionPerformed(evt);
@@ -4292,10 +4257,6 @@ public class ESPlorer extends javax.swing.JFrame {
         cmdGetCWMODE.setMaximumSize(new java.awt.Dimension(210, 23));
         cmdGetCWMODE.setMinimumSize(new java.awt.Dimension(210, 23));
         cmdGetCWMODE.setPreferredSize(new java.awt.Dimension(210, 23));
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, cmdGetHelpCWMODE, org.jdesktop.beansbinding.ELProperty.create("${font}"), cmdGetCWMODE, org.jdesktop.beansbinding.BeanProperty.create("font"));
-        bindingGroup.addBinding(binding);
-
         cmdGetCWMODE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdGetCWMODEActionPerformed(evt);
@@ -4309,10 +4270,6 @@ public class ESPlorer extends javax.swing.JFrame {
         cmdSetCWMODE2.setMaximumSize(new java.awt.Dimension(210, 23));
         cmdSetCWMODE2.setMinimumSize(new java.awt.Dimension(210, 23));
         cmdSetCWMODE2.setPreferredSize(new java.awt.Dimension(210, 23));
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, cmdGetHelpCWMODE, org.jdesktop.beansbinding.ELProperty.create("${font}"), cmdSetCWMODE2, org.jdesktop.beansbinding.BeanProperty.create("font"));
-        bindingGroup.addBinding(binding);
-
         cmdSetCWMODE2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdSetCWMODE2ActionPerformed(evt);
@@ -4327,10 +4284,6 @@ public class ESPlorer extends javax.swing.JFrame {
         cmdSetCWLAP.setMaximumSize(new java.awt.Dimension(210, 23));
         cmdSetCWLAP.setMinimumSize(new java.awt.Dimension(210, 23));
         cmdSetCWLAP.setPreferredSize(new java.awt.Dimension(210, 23));
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, cmdGetHelpCWMODE, org.jdesktop.beansbinding.ELProperty.create("${font}"), cmdSetCWLAP, org.jdesktop.beansbinding.BeanProperty.create("font"));
-        bindingGroup.addBinding(binding);
-
         cmdSetCWLAP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdSetCWLAPActionPerformed(evt);
@@ -4344,10 +4297,6 @@ public class ESPlorer extends javax.swing.JFrame {
         cmdSetCWMODE3.setMaximumSize(new java.awt.Dimension(210, 23));
         cmdSetCWMODE3.setMinimumSize(new java.awt.Dimension(210, 23));
         cmdSetCWMODE3.setPreferredSize(new java.awt.Dimension(210, 23));
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, cmdGetHelpCWMODE, org.jdesktop.beansbinding.ELProperty.create("${font}"), cmdSetCWMODE3, org.jdesktop.beansbinding.BeanProperty.create("font"));
-        bindingGroup.addBinding(binding);
-
         cmdSetCWMODE3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdSetCWMODE3ActionPerformed(evt);
@@ -5680,6 +5629,7 @@ public class ESPlorer extends javax.swing.JFrame {
 
         FileManagerScrollPane.setBorder(null);
         FileManagerScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        FileManagerScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         FileManagersLayer.setMaximumSize(new java.awt.Dimension(145, 145));
 
@@ -6205,7 +6155,7 @@ public class ESPlorer extends javax.swing.JFrame {
             }
         });
 
-        MenuItemFileNew.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemFileNew.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemFileNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/document.png"))); // NOI18N
         MenuItemFileNew.setText("<html><u>N</u>ew");
         MenuItemFileNew.setToolTipText("File New");
@@ -6216,7 +6166,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuFile.add(MenuItemFileNew);
 
-        MenuItemFileOpen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemFileOpen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemFileOpen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/folder open.png"))); // NOI18N
         MenuItemFileOpen.setText("<html><u>O</u>pen from disk");
         MenuItemFileOpen.addActionListener(new java.awt.event.ActionListener() {
@@ -6226,7 +6176,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuFile.add(MenuItemFileOpen);
 
-        MenuItemFileReload.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemFileReload.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemFileReload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/refresh.png"))); // NOI18N
         MenuItemFileReload.setText("<html><u>R</u>eload from disk");
         MenuItemFileReload.setToolTipText("Reload file from disk, if you use external editor");
@@ -6238,7 +6188,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuFile.add(MenuItemFileReload);
 
-        MenuItemFileSave.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemFileSave.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemFileSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/save.png"))); // NOI18N
         MenuItemFileSave.setText("<html><u>S</u>ave to disk");
         MenuItemFileSave.addActionListener(new java.awt.event.ActionListener() {
@@ -6257,13 +6207,13 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuFile.add(MenuItemFileSaveAs);
 
-        MenuItemFileSaveAll.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemFileSaveAll.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemFileSaveAll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/save_all.png"))); // NOI18N
         MenuItemFileSaveAll.setText("<html>Save <u>A</u>ll to disk");
         MenuItemFileSaveAll.setEnabled(false);
         MenuFile.add(MenuItemFileSaveAll);
 
-        MenuItemFileClose.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemFileClose.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemFileClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/folder closed.png"))); // NOI18N
         MenuItemFileClose.setText("Close");
         MenuItemFileClose.addActionListener(new java.awt.event.ActionListener() {
@@ -6274,13 +6224,9 @@ public class ESPlorer extends javax.swing.JFrame {
         MenuFile.add(MenuItemFileClose);
         MenuFile.add(jSeparatorFileMenu);
 
-        MenuItemFileSaveESP.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
+        MenuItemFileSaveESP.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK));
         MenuItemFileSaveESP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/move.png"))); // NOI18N
         MenuItemFileSaveESP.setText("<html><u>S</u>ave to ESP");
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, FileSaveESP, org.jdesktop.beansbinding.ELProperty.create("${enabled}"), MenuItemFileSaveESP, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
         MenuItemFileSaveESP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuItemFileSaveESPActionPerformed(evt);
@@ -6288,12 +6234,12 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuFile.add(MenuItemFileSaveESP);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_DOWN_MASK));
         jMenuItem4.setText("<html>Save <u>A</u>ll to ESP");
         jMenuItem4.setEnabled(false);
         MenuFile.add(jMenuItem4);
 
-        MenuItemFileSendESP.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK));
+        MenuItemFileSendESP.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_DOWN_MASK));
         MenuItemFileSendESP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/script_send.png"))); // NOI18N
         MenuItemFileSendESP.setText("<html>S<u>e</u>nd to ESP");
         MenuItemFileSendESP.addActionListener(new java.awt.event.ActionListener() {
@@ -6303,13 +6249,13 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuFile.add(MenuItemFileSendESP);
 
-        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_DOWN_MASK));
         jMenuItem7.setText("<html><u>U</u>pload file to ESP");
         jMenuItem7.setEnabled(false);
         MenuFile.add(jMenuItem7);
         MenuFile.add(jSeparator4);
 
-        MenuItemFileDo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_MASK));
+        MenuItemFileDo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_DOWN_MASK));
         MenuItemFileDo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/play.png"))); // NOI18N
         MenuItemFileDo.setText("<html><u>D</u>oFile on ESP");
         MenuItemFileDo.addActionListener(new java.awt.event.ActionListener() {
@@ -6320,7 +6266,7 @@ public class ESPlorer extends javax.swing.JFrame {
         MenuFile.add(MenuItemFileDo);
         MenuFile.add(jSeparator3);
 
-        MenuItemFileRemoveESP.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK));
+        MenuItemFileRemoveESP.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_DOWN_MASK));
         MenuItemFileRemoveESP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/trash.png"))); // NOI18N
         MenuItemFileRemoveESP.setText("<html><u>R</u>emove from ESP");
         MenuItemFileRemoveESP.addActionListener(new java.awt.event.ActionListener() {
@@ -6331,7 +6277,7 @@ public class ESPlorer extends javax.swing.JFrame {
         MenuFile.add(MenuItemFileRemoveESP);
         MenuFile.add(jSeparator2);
 
-        MenuItemFileExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+        MenuItemFileExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
         MenuItemFileExit.setText("Exit");
         MenuItemFileExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -6344,7 +6290,7 @@ public class ESPlorer extends javax.swing.JFrame {
 
         MenuEdit.setText("Edit");
 
-        MenuItemEditUndo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemEditUndo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemEditUndo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/undo1.png"))); // NOI18N
         MenuItemEditUndo.setText("Undo");
         MenuItemEditUndo.setEnabled(false);
@@ -6367,7 +6313,7 @@ public class ESPlorer extends javax.swing.JFrame {
         MenuEdit.add(MenuItemEditRedo);
         MenuEdit.add(jSeparator7);
 
-        MenuItemEditCut.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemEditCut.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemEditCut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/cut.png"))); // NOI18N
         MenuItemEditCut.setText("Cut");
         MenuItemEditCut.setEnabled(false);
@@ -6378,7 +6324,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuEdit.add(MenuItemEditCut);
 
-        MenuItemEditCopy.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemEditCopy.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemEditCopy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/copy.png"))); // NOI18N
         MenuItemEditCopy.setText("Copy");
         MenuItemEditCopy.setEnabled(false);
@@ -6389,7 +6335,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuEdit.add(MenuItemEditCopy);
 
-        MenuItemEditPaste.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemEditPaste.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemEditPaste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/paste.png"))); // NOI18N
         MenuItemEditPaste.setText("Paste");
         MenuItemEditPaste.setToolTipText("");
@@ -6402,14 +6348,10 @@ public class ESPlorer extends javax.swing.JFrame {
         MenuEdit.add(MenuItemEditPaste);
         MenuEdit.add(jSeparator5);
 
-        MenuItemEditSendSelected.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_MASK));
+        MenuItemEditSendSelected.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_DOWN_MASK));
         MenuItemEditSendSelected.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/send_selected.png"))); // NOI18N
         MenuItemEditSendSelected.setText("<html>Send selected <u>B</u>lock to ESP");
         MenuItemEditSendSelected.setToolTipText("Send selected block to ESP");
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, MenuItemEditorSendSelected, org.jdesktop.beansbinding.ELProperty.create("${enabled}"), MenuItemEditSendSelected, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
         MenuItemEditSendSelected.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuItemEditSendSelectedActionPerformed(evt);
@@ -6417,7 +6359,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuEdit.add(MenuItemEditSendSelected);
 
-        MenuItemEditSendLine.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_MASK));
+        MenuItemEditSendLine.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_DOWN_MASK));
         MenuItemEditSendLine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/run_line.png"))); // NOI18N
         MenuItemEditSendLine.setText("<html>Send current <u>L</u>ine to ESP");
         MenuItemEditSendLine.setToolTipText("Send current line from code editor window to ESP");
@@ -6480,7 +6422,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuView.add(AlwaysOnTop);
 
-        MenuItemViewLog.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemViewLog.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemViewLog.setSelected(true);
         MenuItemViewLog.setText("<html>Show <u>L</u>og");
         MenuItemViewLog.setToolTipText("Enable/disable log window");
@@ -6497,7 +6439,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuView.add(MenuItemViewLog);
 
-        MenuItemViewClearLog.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemViewClearLog.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemViewClearLog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/backup_delete.png"))); // NOI18N
         MenuItemViewClearLog.setText("Clear log");
         MenuItemViewClearLog.setToolTipText("Clear log window");
@@ -6508,7 +6450,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuView.add(MenuItemViewClearLog);
 
-        MenuItemViewClearTerminal.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemViewClearTerminal.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemViewClearTerminal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/terminal_clear.png"))); // NOI18N
         MenuItemViewClearTerminal.setText("Clear terminal");
         MenuItemViewClearTerminal.setToolTipText("Clear terminal window");
@@ -6520,7 +6462,7 @@ public class ESPlorer extends javax.swing.JFrame {
         MenuView.add(MenuItemViewClearTerminal);
         MenuView.add(jSeparator9);
 
-        MenuItemViewTerminalOnly.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.ALT_MASK));
+        MenuItemViewTerminalOnly.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.ALT_DOWN_MASK));
         MenuItemViewTerminalOnly.setText("Show Terminal only (Left panel show/hide)");
         MenuItemViewTerminalOnly.setToolTipText("Enable/disable left panel");
         MenuItemViewTerminalOnly.addItemListener(new java.awt.event.ItemListener() {
@@ -6535,7 +6477,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuView.add(MenuItemViewTerminalOnly);
 
-        MenuItemViewEditorOnly.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, java.awt.event.InputEvent.ALT_MASK));
+        MenuItemViewEditorOnly.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, java.awt.event.InputEvent.ALT_DOWN_MASK));
         MenuItemViewEditorOnly.setText("Show Editor only (Right panel show/hide)");
         MenuItemViewEditorOnly.setToolTipText("Enable/disable left panel");
         MenuItemViewEditorOnly.addItemListener(new java.awt.event.ItemListener() {
@@ -6641,7 +6583,7 @@ public class ESPlorer extends javax.swing.JFrame {
         MenuView.add(MenuItemViewDonate);
         MenuView.add(jSeparator13);
 
-        MenuItemViewTermFontInc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ADD, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemViewTermFontInc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ADD, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemViewTermFontInc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/zoom in.png"))); // NOI18N
         MenuItemViewTermFontInc.setText("Terminal font size inc");
         MenuItemViewTermFontInc.addActionListener(new java.awt.event.ActionListener() {
@@ -6651,7 +6593,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuView.add(MenuItemViewTermFontInc);
 
-        MenuItemViewTermFontDec.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SUBTRACT, java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemViewTermFontDec.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SUBTRACT, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemViewTermFontDec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/zoom out.png"))); // NOI18N
         MenuItemViewTermFontDec.setText("Terminal font size dec");
         MenuItemViewTermFontDec.addActionListener(new java.awt.event.ActionListener() {
@@ -6662,7 +6604,7 @@ public class ESPlorer extends javax.swing.JFrame {
         MenuView.add(MenuItemViewTermFontDec);
         MenuView.add(jSeparator10);
 
-        MenuItemViewEditorFontInc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ADD, java.awt.event.InputEvent.ALT_MASK));
+        MenuItemViewEditorFontInc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ADD, java.awt.event.InputEvent.ALT_DOWN_MASK));
         MenuItemViewEditorFontInc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/zoom in.png"))); // NOI18N
         MenuItemViewEditorFontInc.setText("Editor font size inc");
         MenuItemViewEditorFontInc.addActionListener(new java.awt.event.ActionListener() {
@@ -6672,7 +6614,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuView.add(MenuItemViewEditorFontInc);
 
-        MenuItemViewEditorFontDec.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SUBTRACT, java.awt.event.InputEvent.ALT_MASK));
+        MenuItemViewEditorFontDec.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SUBTRACT, java.awt.event.InputEvent.ALT_DOWN_MASK));
         MenuItemViewEditorFontDec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/zoom out.png"))); // NOI18N
         MenuItemViewEditorFontDec.setText("Editor font size dec");
         MenuItemViewEditorFontDec.addActionListener(new java.awt.event.ActionListener() {
@@ -6683,7 +6625,7 @@ public class ESPlorer extends javax.swing.JFrame {
         MenuView.add(MenuItemViewEditorFontDec);
         MenuView.add(jSeparator11);
 
-        MenuItemViewLogFontInc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ADD, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemViewLogFontInc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ADD, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemViewLogFontInc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/zoom in.png"))); // NOI18N
         MenuItemViewLogFontInc.setText("Log font size inc");
         MenuItemViewLogFontInc.addActionListener(new java.awt.event.ActionListener() {
@@ -6693,7 +6635,7 @@ public class ESPlorer extends javax.swing.JFrame {
         });
         MenuView.add(MenuItemViewLogFontInc);
 
-        MenuItemViewLogFontDec.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SUBTRACT, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        MenuItemViewLogFontDec.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SUBTRACT, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MenuItemViewLogFontDec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/zoom out.png"))); // NOI18N
         MenuItemViewLogFontDec.setText("Log font size dec");
         MenuItemViewLogFontDec.addActionListener(new java.awt.event.ActionListener() {
@@ -6874,8 +6816,6 @@ public class ESPlorer extends javax.swing.JFrame {
         );
 
         getAccessibleContext().setAccessibleDescription("");
-
-        bindingGroup.bind();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -10723,7 +10663,6 @@ public class ESPlorer extends javax.swing.JFrame {
     private javax.swing.JTextField softAPIP;
     private javax.swing.JTextField udp_local_port;
     private javax.swing.JTextField udp_mode;
-    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 
     // Variables
